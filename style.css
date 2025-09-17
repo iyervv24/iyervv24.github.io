@@ -1,60 +1,72 @@
-/* style.css - override for input visibility (stronger specificity) */
-:root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#06b6d4}
-body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;line-height:1.5;margin:0;background:linear-gradient(180deg,#071025 0%, #07172b 100%);color:#e6eef6}
-.container{max-width:1100px;margin:0 auto;padding:28px}
 
-/* Stronger input/textarea rules to ensure visibility across themes */
-.card input,
-.card textarea,
-.container input,
-.container textarea,
-input[type="text"],
-input[type="email"],
-input[type="search"],
-input[type="url"],
-input[type="tel"],
-input[type="number"],
-textarea {
-  background: rgba(255,255,255,0.95) !important; /* almost white */
-  color: #0b1220 !important;                      /* dark text for readability */
-  border: 1px solid rgba(0,0,0,0.15) !important;  /* subtle border */
-  border-radius: 8px !important;
-  padding: 10px 12px !important;
-  font-size: 14px !important;
-  box-shadow: none !important;
-  outline: none !important;
+/* style.css - theme persistence & nav visibility fixes
+   - Ensures nav remains visible on smaller screens
+   - Provides consistent input styling
+   - Leaves light/dark theme variables intact
+*/
+
+:root{
+  --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#06b6d4; --glass: rgba(255,255,255,0.04);
+  --surface:#0b1220; --text:#e6eef6; --card-radius:14px;
 }
 
-/* Placeholder color */
-.card input::placeholder,
-.card textarea::placeholder,
-input::placeholder,
-textarea::placeholder {
-  color: #6b7280 !important; /* medium gray */
-  opacity: 1 !important;
+[data-theme="light"]{
+  --bg: #f6f8fb; --surface:#ffffff; --text:#0f1724; --muted:#6b7280; --accent:#2563eb;
+  --glass: rgba(15,23,36,0.04);
 }
 
-/* Focus state */
-.card input:focus,
-.card textarea:focus,
-input:focus,
-textarea:focus {
-  border-color: var(--accent) !important;
-  box-shadow: 0 0 0 4px rgba(6,182,212,0.08) !important;
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:linear-gradient(180deg,var(--bg), #07172b);color:var(--text);-webkit-font-smoothing:antialiased;}
+.container{max-width:1100px;margin:0 auto;padding:36px}
+
+/* Header */
+.header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#8b5cf6);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;box-shadow:0 8px 30px rgba(2,6,23,0.5)}
+.nav{display:flex;gap:14px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px}
+.nav a:hover{color:var(--text);background:var(--glass)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:28px}
+.card{background:var(--surface);padding:24px;border-radius:var(--card-radius);box-shadow:0 8px 30px rgba(2,6,23,0.45);border:1px solid rgba(255,255,255,0.03);color:var(--text)}
+h1{font-size:30px;margin:0}
+.lead{color:var(--muted);margin-top:8px}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chips .chip{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;color:var(--muted)}
+
+/* main layout */
+.grid{display:grid;grid-template-columns:1fr 340px;gap:22px}
+.post{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02);margin-bottom:12px}
+.muted{color:var(--muted);font-size:14px}
+
+/* form styles - modern */
+input, textarea, select {
+  width:100%; padding:12px 14px; border-radius:10px; border:1px solid rgba(15,23,36,0.08); background: rgba(255,255,255,0.97); color:#0b1220; font-size:14px;
+}
+[data-theme="dark"] input, [data-theme="dark"] textarea { background: #0f1724; color: #e6eef6; border:1px solid rgba(255,255,255,0.06); }
+textarea{min-height:120px;resize:vertical}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#8b5cf6);color:#012;font-weight:700;text-decoration:none;border:none;cursor:pointer}
+
+/* footer */
+.footer{text-align:center;color:var(--muted);margin-top:28px;padding-bottom:40px}
+
+/* utilities */
+.row{display:flex;gap:12px;align-items:center}
+
+/* Responsive tweaks: keep nav visible; make layout stack on small screens */
+@media (max-width:920px){
+  .hero{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  /* show nav as wrapping row on small screens instead of hiding */
+  .nav{display:flex;flex-wrap:wrap;gap:10px}
+  .nav a{padding:6px 8px}
 }
 
-/* Make submit button consistent */
-button, .btn {
-  background: linear-gradient(90deg,var(--accent),#8b5cf6);
-  color: #012;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 14px;
-  font-weight:700;
-  cursor:pointer;
-}
+/* small accessibility: larger hit target for theme toggle */
+#themeToggle { padding:8px 10px; border-radius:8px; }
 
-/* Responsive tweaks */
-@media (max-width:900px) {
-  .container{padding:18px}
-}
+/* ensure focus outline visible for accessibility */
+a:focus, button:focus, input:focus, textarea:focus { outline: 3px solid rgba(6,182,212,0.12); outline-offset: 2px; }
