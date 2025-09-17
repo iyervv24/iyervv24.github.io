@@ -1,7 +1,20 @@
-/* style.css - simple modern styling */
-:root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#06b6d4;--glass:rgba(255,255,255,0.04)}
+/* style.css - modern styling with improved form input visibility */
+:root {
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#06b6d4;
+  --glass:rgba(255,255,255,0.04);
+}
+
 *{box-sizing:border-box}
-body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;line-height:1.5;margin:0;background:linear-gradient(180deg,#071025 0%, #07172b 100%);color:#e6eef6}
+body{
+  font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  line-height:1.5;
+  margin:0;
+  background:linear-gradient(180deg,#071025 0%, #07172b 100%);
+  color:#e6eef6;
+}
 .container{max-width:1100px;margin:0 auto;padding:28px}
 .header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
 .brand{display:flex;align-items:center;gap:14px}
@@ -16,3 +29,22 @@ h1,h2,h3{margin:0}
 .container a.cta{display:inline-block;margin-top:12px;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#8b5cf6);color:#012;font-weight:700;text-decoration:none}
 .main-grid{display:grid;grid-template-columns:1fr 340px;gap:22px}
 @media (max-width:900px){.main-grid{grid-template-columns:1fr}nav a{display:none}}
+
+/* Improved form styling */
+input, textarea {
+  background: #ffffff;       /* White background for visibility */
+  color: #000000;            /* Dark text */
+  border: 1px solid #ccc;    /* Light border */
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #666;               /* Placeholder text in gray */
+}
+
+button {
+  cursor: pointer;
+}
