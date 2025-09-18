@@ -47,7 +47,7 @@ body {
   flex-direction: column;
 }
 .hero-img {
-  background-image: url("assets/hero_business_desktop.png");
+  background-image: url("assets/hero_business_Desktop.png");
   background-size: cover;
   background-position: center;
   height: 400px;
