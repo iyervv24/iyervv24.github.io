@@ -1,34 +1,136 @@
-:root{
-  --bg:#ffffff; --text:#0b1b2b; --muted:#6b7280; --accent:#e6a60a; --accent-2:#0b63ff;
-  --container:1100px; --radius:12px; --card:#ffffff;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+/* Reset + base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: Arial, sans-serif;
+  color: #0d1b2a;
+  background: #fff;
+  line-height: 1.5;
 }
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
-.container{max-width:var(--container);margin:0 auto;padding:48px}
-.header{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
-.brand{display:flex;align-items:center;gap:14px}
-.logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent-2),#6ec6ff);display:flex;align-items:center;justify-content:center;color:#042;font-weight:800}
-.nav a{margin-left:20px;color:var(--muted);text-decoration:none;font-size:15px}
-.hero{display:grid;grid-template-columns:1fr 520px;gap:40px;align-items:center;margin-top:40px}
-.hero .left{padding:24px}
-h1{font-size:56px;margin:0;line-height:1.02}
-.lead{color:var(--muted);margin-top:16px;font-size:18px;max-width:60ch}
-.cta-btn{display:inline-block;margin-top:26px;padding:14px 20px;border-radius:10px;background:var(--accent);color:#081;font-weight:700;text-decoration:none}
-.hero .right img{width:100%;border-radius:14px;box-shadow:0 10px 30px rgba(15,23,42,0.08)}
 
-/* sections */
-.section{margin-top:60px;display:grid;grid-template-columns:1fr 360px;gap:36px;align-items:start}
-.card{background:var(--card);padding:28px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(15,23,42,0.04);border:1px solid rgba(0,0,0,0.04)}
-.muted{color:var(--muted);}
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 5%;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
 
-/* contact form */
-input,textarea{width:100%;padding:12px;border:1px solid rgba(0,0,0,0.08);border-radius:8px;font-size:15px}
-textarea{min-height:140px}
-.form-row{display:flex;gap:12px}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-/* footer */
-.footer{margin-top:60px;padding:40px 0;text-align:center;color:var(--muted);}
+.logo {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #667eea, #64b6ff);
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
 
-/* responsive */
-@media (max-width:920px){.hero{grid-template-columns:1fr} .section{grid-template-columns:1fr} .nav{display:none} h1{font-size:36px}}
+.nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav a:hover { color: #0056b3; }
+
+.btn-cv {
+  background: #f7b500;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.btn-cv:hover { background: #e09e00; }
+
+/* Hero */
+.hero {
+  position: relative;
+  background: url("assets/hero_business_human.png") center/cover no-repeat;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hero-overlay {
+  max-width: 640px;
+  margin-left: 5%;
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #0d6efd;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-right: 16px;
+}
+
+.cta-btn:hover { background: #004bb3; }
+
+.link-secondary {
+  font-size: 0.95rem;
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 24px 0;
+  font-size: 14px;
+  background: #fafafa;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav { display: none; }
+  .hero {
+    justify-content: center;
+    text-align: center;
+    background-position: center top;
+    min-height: 70vh;
+  }
+  .hero-overlay {
+    margin: 0 16px;
+    padding: 24px;
+  }
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+  .cta-btn { width: 100%; margin-bottom: 12px; }
+}
