@@ -1,48 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>V. V. Iyer | Enterprise IT & Transformation</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>V. V. Iyer — CIO · Enterprise IT & Transformation</title>
+
+  <!-- Primary meta -->
+  <meta name="description" content="V. V. Iyer — 35+ years enabling ERP (SAP), WMS, RFID and IT transformation that convert technology into measurable business outcomes." />
+  <meta name="author" content="V. V. Iyer" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://iyervv24.github.io/" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="V. V. Iyer — CIO · Enterprise IT & Transformation" />
+  <meta property="og:description" content="35+ years enabling ERP (SAP), WMS, RFID and IT transformation that convert technology into measurable business outcomes." />
+  <meta property="og:url" content="https://iyervv24.github.io/" />
+  <meta property="og:image" content="https://iyervv24.github.io/assets/social-preview-v6.png?v=6" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="V. V. Iyer — CIO · Enterprise IT & Transformation" />
+  <meta name="twitter:description" content="35+ years enabling ERP (SAP), WMS, RFID and IT transformation that convert technology into measurable business outcomes." />
+  <meta name="twitter:image" content="https://iyervv24.github.io/assets/social-preview-v6.png?v=6" />
+
+  <link rel="icon" href="assets/favicon.ico" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Header -->
   <header class="header">
     <div class="brand">
-      <div class="logo">VVI</div>
-      <div>
-        <strong>Vaidyanathan Venkataraman</strong><br>
-        CIO · Enterprise IT · ERP Transformation
+      <div class="logo" aria-hidden="true">VVI</div>
+      <div class="brand-text">
+        <div class="name">Vaidyanathan Venkataraman</div>
+        <div class="muted">CIO · Enterprise IT · ERP</div>
       </div>
     </div>
-    <nav class="nav">
+
+    <!-- Desktop nav -->
+    <nav class="nav" id="mainNav" aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="insights.html">Insights</a>
       <a href="contact.html">Contact</a>
+      <a class="btn-cv" href="V_V_Iyer_CV.pdf" download>Download CV</a>
     </nav>
-    <a href="assets/VVIyer_CV.pdf" class="btn-cv">Download CV</a>
+
+    <!-- Mobile hamburger -->
+    <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <span class="hamburger"></span>
+    </button>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
+  <!-- Mobile menu (hidden by default) -->
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="insights.html">Insights</a>
+    <a href="contact.html">Contact</a>
+    <a class="btn-cv" href="V_V_Iyer_CV.pdf" download>Download CV</a>
+  </div>
+
+  <!-- Hero: background only images, text is HTML overlay for SEO and accessibility -->
+  <section class="hero" role="region" aria-label="Hero">
     <div class="hero-overlay">
       <h1>Turning enterprise IT from cost centre into growth engine</h1>
-      <p>
-        I partner with leadership teams to align technology investments with measurable
-        business outcomes — practical pilots, clear KPIs, and governance that prevents rework.
-      </p>
-      <a href="contact.html" class="cta-btn">Work with me</a>
-      <a href="insights.html" class="link-secondary">Or receive my quick 3 insights</a>
+      <p class="lead">I partner with leadership teams to align technology investments with measurable business outcomes — practical pilots, clear KPIs, and governance that prevents rework.</p>
+
+      <div class="hero-ctas">
+        <a class="cta-btn" href="contact.html">Work with me</a>
+        <a class="link-secondary" href="insights.html">Or receive my quick 3 insights</a>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Main minimal content (keeps your layout intact; other pages unchanged) -->
+  <main>
+    <!-- Keep your existing sections; this patch focuses on header/nav/hero/SEO -->
+  </main>
+
   <footer class="footer">
-    <p>Made with clarity · V. V. Iyer · © 2025</p>
+    <div class="muted">Made with clarity · V. V. Iyer · © 2025</div>
   </footer>
 
+  <!-- Small inline script to toggle mobile nav (accessible) -->
+  <script>
+    (function () {
+      const toggle = document.getElementById('navToggle');
+      const menu = document.getElementById('mobileMenu');
+      const nav = document.getElementById('mainNav');
+
+      function setOpen(open) {
+        toggle.setAttribute('aria-expanded', String(open));
+        menu.setAttribute('aria-hidden', String(!open));
+        if (open) {
+          menu.style.maxHeight = menu.scrollHeight + "px";
+        } else {
+          menu.style.maxHeight = null;
+        }
+      }
+
+      toggle.addEventListener('click', function () {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        setOpen(!isOpen);
+      });
+
+      // Close on resize to desktop
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 920) {
+          setOpen(false);
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
