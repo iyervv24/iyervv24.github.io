@@ -1,0 +1,142 @@
+/* ---------- Full site stylesheet (header/nav focused) ---------- */
+
+/* Reset & base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height:100%; }
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  color:#0d1b2a;
+  background:#fff;
+  line-height:1.45;
+}
+
+/* ---------- Header (strong, non-wrapping layout) ---------- */
+.site-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding: 12px 5% !important;
+  background: rgba(255,255,255,0.96) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 120 !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04) !important;
+  flex-wrap: nowrap !important;           /* prevent wrapping */
+  min-height: 60px !important;
+}
+
+/* Brand left */
+.brand {
+  display:flex !important;
+  align-items:center !important;
+  gap:12px !important;
+  flex: 0 1 auto !important;
+}
+.logo {
+  width:48px; height:48px; border-radius:10px;
+  background: linear-gradient(135deg,#6f6dff,#5dd0ff);
+  display:flex; align-items:center; justify-content:center;
+  color:#042; font-weight:800;
+  flex: 0 0 48px;
+}
+.brand-text {
+  display:flex; flex-direction:column; line-height:1.1;
+}
+.brand-text .name { font-weight:700; font-size:15px; }
+.muted { color:#6b7280; font-size:13px; }
+
+/* Navigation (right side) */
+.site-nav {
+  display:flex !important;
+  align-items:center !important;
+  gap:20px !important;
+  margin-left:auto !important;         /* push nav to right */
+  flex: 0 0 auto !important;
+  white-space:nowrap !important;
+}
+.site-nav a {
+  color:#243241 !important;
+  text-decoration:none !important;
+  font-weight:500 !important;
+  padding:6px 4px !important;
+  font-size:14px !important;
+}
+.site-nav a:hover { color:#0b63ff !important; }
+
+/* CV button */
+.btn-cv {
+  display:inline-block !important;
+  background:#f7b500 !important;
+  color:#000 !important;
+  padding:8px 14px !important;
+  border-radius:8px !important;
+  font-weight:700 !important;
+  text-decoration:none !important;
+}
+
+/* Mobile toggle (hidden on desktop) */
+.nav-toggle {
+  display:none;
+  width:44px; height:44px; border:0; background:transparent; cursor:pointer;
+  align-items:center; justify-content:center;
+}
+.hamburger { display:block; width:22px; height:2px; background:#0d1b2a; position:relative; }
+.hamburger::before, .hamburger::after { content:""; position:absolute; left:0; right:0; height:2px; background:#0d1b2a; }
+.hamburger::before { top:-7px; } .hamburger::after { bottom:-7px; }
+
+/* Mobile menu */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 260ms ease, opacity 200ms ease;
+  background:#fff;
+  border-bottom:1px solid rgba(0,0,0,0.04);
+  z-index:110;
+}
+.mobile-menu a { display:block; padding:12px 5%; text-decoration:none; color:#243241; border-top:1px solid rgba(0,0,0,0.02); }
+
+/* ---------- HERO (keeps image visible and fixed height) ---------- */
+.hero { display:block; width:100%; }
+.hero-img {
+  width:100%;
+  height:480px;
+  background-image: url("assets/hero_business_Desktop.png?v=2") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  display:block;
+}
+.hero-content {
+  max-width:980px; margin: 28px auto 0; padding: 0 5%; text-align:left;
+}
+.hero-content h1 { font-size: 2.6rem; line-height:1.08; margin-bottom:12px; }
+.lead { color:#374151; font-size:1.05rem; margin-bottom:18px; }
+.cta-btn { display:inline-block; background:#0b63ff; color:#fff; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:700; }
+
+/* Footer */
+.footer { text-align:center; padding:28px 5%; color:#6b7280; background:#fff; margin-top:40px; }
+
+/* ---------- Responsive: show hamburger and swap hero image ---------- */
+@media (max-width: 920px) {
+  .site-nav { display:none !important; }   /* hide desktop nav */
+  .nav-toggle { display:flex !important; } /* show hamburger */
+  .hero-img {
+    height:260px !important;
+    background-image: url("assets/hero_business_mobile.png?v=2") !important;
+    background-position: center top !important;
+  }
+  .hero-content { margin-top:18px; padding:0 6%; text-align:center; }
+  .hero-content h1 { font-size:1.8rem; }
+  .lead { font-size:1rem; }
+  .cta-btn { display:block; width:100%; margin-bottom:12px; }
+}
+
+/* very small phones */
+@media (max-width:420px) {
+  .hero-img { height:220px !important; }
+  .hero-content h1 { font-size:1.5rem !important; }
+  .brand-text .name { font-size:13px !important; }
+}

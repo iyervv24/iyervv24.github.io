@@ -1,40 +1,277 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>V. V. Iyer — test</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>V. V. Iyer — Enterprise IT & Transformation</title>
+
+  <meta name="description" content="V. V. Iyer — 35+ years enabling ERP (SAP), WMS, RFID and IT transformation that convert technology into measurable business outcomes." />
+  <link rel="canonical" href="https://iyervv24.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="V. V. Iyer — Enterprise IT & Transformation" />
+  <meta property="og:description" content="35+ years enabling ERP (SAP), WMS, RFID and IT transformation that convert technology into measurable business outcomes." />
+  <meta property="og:image" content="https://iyervv24.github.io/assets/social-preview-v6.png?v=6" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/favicon.ico" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
+  <!-- Header -->
+  <header class="site-header" role="banner">
     <div class="brand">
-      <div class="logo">VVI</div>
+      <div class="logo" aria-hidden="true">VVI</div>
       <div class="brand-text">
         <div class="name">Vaidyanathan Venkataraman</div>
         <div class="muted">CIO · Enterprise IT · ERP</div>
       </div>
     </div>
-    <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="insights.html">Insights</a>
-      <a href="contact.html">Contact</a>
-      <a class="btn-cv" href="assets/VVI-CV.pdf">Download CV</a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#insights">Insights</a>
+      <a href="#contact">Contact</a>
+      <a class="btn-cv" href="assets/VVI-CV.pdf" download>Download CV</a>
     </nav>
+
+    <button id="mobileToggle" class="nav-toggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <span class="hamburger" aria-hidden="true"></span>
+    </button>
   </header>
 
-  <main>
+  <!-- Mobile Menu -->
+  <nav id="mobileMenu" class="mobile-menu" aria-hidden="true">
+    <a href="#home" class="mobile-link">Home</a>
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#insights" class="mobile-link">Insights</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+    <a class="btn-cv mobile-cv" href="assets/VVI-CV.pdf" download>Download CV</a>
+  </nav>
+
+  <!-- MAIN -->
+  <main id="home">
+
+    <!-- HERO (desktop image background; mobile crop swapped in CSS) -->
     <section class="hero">
-      <div class="hero-img" role="img" aria-label="hero image"></div>
-      <div class="hero-content">
+      <div class="hero-img" role="img" aria-label="Leader presenting to a team"></div>
+
+      <div class="hero-card">
         <h1>Turning enterprise IT from cost centre into growth engine</h1>
-        <p class="lead">Practical pilots, clear KPIs, governance that prevents rework.</p>
-        <a class="cta-btn" href="contact.html">Work with me</a>
+        <p class="lead">I partner with leadership teams to align technology investments with measurable business outcomes — practical pilots, clear KPIs, and governance that prevents rework.</p>
+
+        <div class="hero-actions">
+          <a class="cta-primary" href="#contact">Work with me</a>
+          <a class="link-muted" href="#insights">Or receive my quick 3 insights</a>
+        </div>
+
+        <div class="quick-facts">
+          <span>35+ years • SAP • WMS • RFID • Transformation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- UVP + Proof -->
+    <section class="uvp">
+      <div class="uvp-inner">
+        <h2>Unique value — Practical, measurable, trusted</h2>
+        <p>I translate technology investments into measurable performance gains for boards and leadership teams: quick-payback pilots, governance that prevents rework, and execution that sticks.</p>
+
+        <div class="uvp-cards">
+          <div class="card small">
+            <h3>Proof</h3>
+            <ul>
+              <li>SAP ECC global rollouts (India, Korea)</li>
+              <li>RFID program — improved inventory accuracy to 97%</li>
+              <li>Barcode program — reduced shortages & damages</li>
+            </ul>
+          </div>
+
+          <div class="card small">
+            <h3>Value delivery</h3>
+            <p>Focused on measurable outcomes: KPIs, pilots with fast payback, vendor governance, operational adoption.</p>
+          </div>
+
+          <div class="card small">
+            <h3>How I work</h3>
+            <p>Hands-on with leadership teams, calm, collaborative, relentless on accuracy and fast results.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Approach -->
+    <section id="about" class="about section">
+      <div class="container">
+        <div class="grid-2">
+          <div>
+            <h2>About & approach</h2>
+            <p>I combine business strategy with practical delivery to make IT a growth enabler. From SAP ECC rollouts to RFID programs, my focus is pilots that pay back and governance that prevents scope creep.</p>
+            <ul>
+              <li>SAP & ERP strategy</li>
+              <li>WMS & RFID operations</li>
+              <li>Program governance & vendor management</li>
+            </ul>
+          </div>
+
+          <aside class="card aside">
+            <h3>Quick facts</h3>
+            <p>35+ years • FMCG, Chemicals, Paper, Engineering, Ceramics</p>
+            <a class="btn-outline" href="assets/VVI-CV.pdf" download>Download CV</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insights Grid -->
+    <section id="insights" class="insights section">
+      <div class="container">
+        <h2>Insights</h2>
+        <p class="muted">Thought leadership, short reads and practical frameworks.</p>
+
+        <div class="insights-grid">
+          <!-- example posts (replace with your posts + permalinks) -->
+          <article class="insight card">
+            <h3>From SAP ECC to pragmatic automation</h3>
+            <p class="meta">March 2025 · 7 min</p>
+            <p>Prioritise automation pockets with quick payback and clear adoption plans.</p>
+            <a href="#" class="link-muted">Read</a>
+          </article>
+
+          <article class="insight card">
+            <h3>Operational governance that scales</h3>
+            <p class="meta">Feb 2025 · 5 min</p>
+            <p>A tactical playbook for governance without bureaucracy.</p>
+            <a href="#" class="link-muted">Read</a>
+          </article>
+
+          <article class="insight card">
+            <h3>Inventory accuracy: a practical plan</h3>
+            <p class="meta">Jan 2025 · 6 min</p>
+            <p>How small changes in labeling & processes deliver big results.</p>
+            <a href="#" class="link-muted">Read</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials section">
+      <div class="container">
+        <h2>What colleagues say</h2>
+        <div class="test-grid">
+          <blockquote class="card">
+            <p>“Knowledgeable yet perceptive manager — intellectually sharp and approachable.”</p>
+            <cite>— Former colleague</cite>
+          </blockquote>
+          <blockquote class="card">
+            <p>“Calm, positive leadership that drives results and adoption.”</p>
+            <cite>— Leadership peer</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact section">
+      <div class="container">
+        <h2>Work with me</h2>
+        <p class="muted">Selective advisory, transformation sprints, and speaking. Please include timeline and budget for faster alignment.</p>
+
+        <div class="contact-grid">
+          <form action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST" class="card form" id="contactForm">
+            <label>
+              <span class="label">Name</span>
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              <span class="label">Email</span>
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              <span class="label">Brief: what problem? timeline? budget?</span>
+              <textarea name="message" rows="6" required></textarea>
+            </label>
+            <button type="submit" class="cta-primary">Send</button>
+            <p class="muted small">Or email directly: <a href="mailto:iyervv24@gmail.com">iyervv24@gmail.com</a></p>
+          </form>
+
+          <aside class="card aside">
+            <h3>Availability</h3>
+            <p>Selective advisory. If you’re contacting about a program, include timeline and budget to speed alignment.</p>
+            <h4>Contact</h4>
+            <p><a href="mailto:iyervv24@gmail.com">iyervv24@gmail.com</a></p>
+          </aside>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">Made with clarity · V. V. Iyer · © 2025</footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="muted">Made with clarity · V. V. Iyer · © 2025</p>
+    </div>
+  </footer>
+
+  <!-- JS: mobile menu toggle + close-on-navigate -->
+  <script>
+    (function () {
+      const toggle = document.getElementById('mobileToggle');
+      const menu = document.getElementById('mobileMenu');
+      if (!toggle || !menu) return;
+
+      function setOpen(open) {
+        toggle.setAttribute('aria-expanded', String(open));
+        menu.setAttribute('aria-hidden', String(!open));
+        if (open) {
+          menu.classList.add('open');
+          menu.style.maxHeight = menu.scrollHeight + "px";
+          document.body.style.overflow = "hidden";
+        } else {
+          menu.classList.remove('open');
+          menu.style.maxHeight = null;
+          document.body.style.overflow = "";
+        }
+      }
+
+      // init closed
+      setOpen(false);
+
+      toggle.addEventListener('click', function () {
+        setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+      });
+
+      // close on mobile link click so next page loads with menu closed
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+
+      // contact form: show quick thank-you on success (no redirect) — Formspree will POST and then return; use event to show message
+      const form = document.getElementById('contactForm');
+      if (form) {
+        form.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          const data = new FormData(form);
+          try {
+            const resp = await fetch(form.action, {
+              method: 'POST',
+              body: data,
+              headers: { 'Accept': 'application/json' }
+            });
+            if (resp.ok) {
+              form.innerHTML = '<p class="lead">Thanks — I received your message and will reply soon.</p>';
+            } else {
+              const json = await resp.json();
+              form.querySelector('button[type="submit"]').disabled = false;
+              alert('Submission failed. Please try emailing me directly.');
+            }
+          } catch (err) {
+            alert('Network error — please try again or email directly.');
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
