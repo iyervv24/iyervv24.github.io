@@ -6,7 +6,6 @@
   <title>V. V. Iyer — Enterprise IT & Transformation</title>
 
   <meta name="description" content="V. V. Iyer — 35+ years delivering ERP, WMS, RFID and operational transformation. Strategic IT leadership that drives measurable outcomes." />
-  <link rel="canonical" href="https://iyervv24.github.io/" />
   <meta property="og:title" content="V. V. Iyer — Enterprise IT & Transformation" />
   <meta property="og:description" content="Strategic ERP, WMS and operational transformation. Practical pilots, clear KPIs, governance that prevents rework." />
   <meta property="og:image" content="https://iyervv24.github.io/assets/social-preview.png" />
@@ -17,50 +16,47 @@
 </head>
 <body>
   <header class="site-header" role="banner">
-    <div class="site-brand container">
-      <div class="logo-badge" aria-hidden="true">VVI</div>
-      <div class="brand-text">
-        <div class="brand-name">Vaidyanathan Venkataraman</div>
-        <div class="brand-sub">CIO · Enterprise IT · ERP</div>
+    <div class="container site-header-inner">
+      <div class="brand-left">
+        <div class="logo-badge" aria-hidden="true">VVI</div>
+        <div class="brand-text">
+          <div class="brand-name">Vaidyanathan Venkataraman</div>
+          <div class="brand-sub">CIO · Enterprise IT · ERP</div>
+        </div>
       </div>
 
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="insights.html" class="nav-link">Insights</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="insights.html">Insights</a>
+        <a class="nav-link" href="contact.html">Contact</a>
         <a class="btn-cv" href="assets/VVI-CV.pdf" title="Download CV">Download CV</a>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero" id="home" role="region" aria-label="Hero">
       <div class="hero-inner container">
-        <!-- left: text -->
         <div class="hero-left">
           <span class="hero-badge">ENTERPRISE TRANSFORMATION LEADER</span>
           <h1 class="hero-title">Turning enterprise IT from cost centre into growth engine</h1>
           <p class="hero-sub">I partner with leadership teams to align technology investments with measurable business outcomes — practical pilots, clear KPIs, and governance that prevents rework.</p>
-
           <div class="cta-group">
             <a class="cta-primary" href="contact.html">Work with me</a>
             <a class="cta-secondary" href="about.html">Discover my approach</a>
           </div>
         </div>
 
-        <!-- right: circular portrait -->
         <aside class="hero-right" aria-hidden="false">
-          <div class="photo-wrap" role="img" aria-label="V. V. Iyer portrait">
-            <!-- Make sure asset exists: assets/profile.webp -->
+          <div class="photo-wrap">
             <img src="assets/profile.webp" alt="Portrait of V. V. Iyer — CIO, Enterprise IT" loading="lazy" />
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- quick cards -->
     <section class="section section-highlights">
       <div class="container">
         <div class="cards-grid">
@@ -82,7 +78,6 @@
       </div>
     </section>
 
-    <!-- footer area contact summary -->
     <section class="section section-footer-cta">
       <div class="container">
         <p class="muted">Prefer email? <a href="mailto:iyervv24@gmail.com">iyervv24@gmail.com</a></p>
@@ -96,15 +91,32 @@
     </div>
   </footer>
 
-  <!-- Minimal JS: ensure no nav/hero collapse issues -->
   <script>
-    // prevent layout shifts if image is missing: show fallback class
+    // small nav toggle and active-link highlight
     (function(){
-      const img = document.querySelector('.photo-wrap img');
-      if(!img) return;
-      img.addEventListener('error', ()=> {
-        document.querySelector('.photo-wrap').classList.add('no-image');
+      const nav = document.querySelector('.site-nav');
+      const toggle = document.getElementById('nav-toggle');
+      const links = document.querySelectorAll('.site-nav .nav-link');
+
+      toggle && toggle.addEventListener('click', ()=> {
+        const open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
+
+      // mark active nav link for current page
+      const path = location.pathname.split("/").pop() || 'index.html';
+      links.forEach(a => {
+        const href = a.getAttribute('href');
+        if(href === path || (href === 'index.html' && path === '')) {
+          a.classList.add('active');
+        }
+      });
+
+      // graceful image error fallback
+      const img = document.querySelector('.photo-wrap img');
+      if(img){
+        img.addEventListener('error', ()=> document.querySelector('.photo-wrap').classList.add('no-image'));
+      }
     })();
   </script>
 </body>
