@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>V. V. Iyer — Enterprise IT & Transformation</title>
+  <title>Contact — V. V. Iyer</title>
 
-  <meta name="description" content="V. V. Iyer — 35+ years delivering ERP, WMS, RFID and operational transformation. Strategic IT leadership that drives measurable outcomes." />
-  <meta property="og:title" content="V. V. Iyer — Enterprise IT & Transformation" />
-  <meta property="og:description" content="Strategic ERP, WMS and operational transformation. Practical pilots, clear KPIs, governance that prevents rework." />
+  <meta name="description" content="Contact V. V. Iyer for advisory, transformation sprints, and speaking. Practical, outcome-first IT leadership." />
+  <meta property="og:title" content="Contact — V. V. Iyer" />
+  <meta property="og:description" content="Contact V. V. Iyer for advisory, transformation sprints, and speaking." />
   <meta property="og:image" content="https://iyervv24.github.io/assets/social-preview.png" />
-  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" href="assets/favicon.ico" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header" role="banner">
     <div class="container site-header-inner">
       <div class="brand-left">
@@ -29,94 +29,94 @@
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="about.html">About</a>
         <a class="nav-link" href="insights.html">Insights</a>
-        <a class="nav-link" href="contact.html">Contact</a>
-        <a class="btn-cv" href="assets/VVI-CV.pdf" title="Download CV">Download CV</a>
+        <a class="nav-link active" href="contact.html">Contact</a>
+        <a class="btn-cv" href="assets/VVI-CV.pdf">Download CV</a>
         <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
       </nav>
     </div>
   </header>
 
+  <!-- Main -->
   <main>
-    <section class="hero" id="home" role="region" aria-label="Hero">
-      <div class="hero-inner container">
-        <div class="hero-left">
-          <span class="hero-badge">ENTERPRISE TRANSFORMATION LEADER</span>
-          <h1 class="hero-title">Turning enterprise IT from cost centre into growth engine</h1>
-          <p class="hero-sub">I partner with leadership teams to align technology investments with measurable business outcomes — practical pilots, clear KPIs, and governance that prevents rework.</p>
-          <div class="cta-group">
-            <a class="cta-primary" href="contact.html">Work with me</a>
-            <a class="cta-secondary" href="about.html">Discover my approach</a>
-          </div>
-        </div>
+    <section class="section container contact-section" aria-labelledby="contactHeading" style="padding-top:64px;">
+      <div class="contact-grid" role="region" aria-label="Contact form and info">
+        <!-- Contact form -->
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" aria-labelledby="contactHeading" novalidate>
+          <h2 id="contactHeading">Work with me</h2>
+          <p class="muted">Selective advisory, transformation sprints, and speaking. Please include timeline and budget for faster alignment.</p>
 
-        <aside class="hero-right" aria-hidden="false">
-          <div class="photo-wrap">
-            <img src="assets/profile.webp" alt="Portrait of V. V. Iyer — CIO, Enterprise IT" loading="lazy" />
+          <label>
+            Full name
+            <input name="name" type="text" placeholder="Your name" required />
+          </label>
+
+          <label>
+            Email
+            <input name="email" type="email" placeholder="your@email.com" required />
+          </label>
+
+          <label>
+            Brief: what problem? timeline? budget?
+            <textarea name="message" rows="6" placeholder="Give me the short brief" required></textarea>
+          </label>
+
+          <button type="submit" class="btn-submit">Send Message</button>
+
+          <p class="muted" style="margin-top:18px">* Required fields. Your information is kept confidential and never shared with third parties.</p>
+        </form>
+
+        <!-- Side info / contact card -->
+        <aside class="contact-info" aria-label="Contact information">
+          <div class="contact-photo" role="img" aria-hidden="true">
+            <!-- small circular thumbnail (300x300 saved as profile-thumb.webp) -->
+            <img src="assets/profile-thumb.webp" alt="Portrait of V. V. Iyer" class="profile-thumb" />
+          </div>
+
+          <h3 style="margin-top:6px">Or email directly</h3>
+          <p><a href="mailto:iyervv24@gmail.com">iyervv24@gmail.com</a></p>
+
+          <h4 style="margin-top:18px">Quick facts</h4>
+          <ul>
+            <li>35+ years · ERP, WMS, RFID</li>
+            <li>Practical pilots • Fast payback</li>
+            <li>Vendor & program governance</li>
+          </ul>
+
+          <div style="margin-top:18px">
+            <a class="cta-secondary" href="assets/VVI-CV.pdf" download>Download CV</a>
           </div>
         </aside>
       </div>
     </section>
-
-    <section class="section section-highlights">
-      <div class="container">
-        <div class="cards-grid">
-          <article class="card">
-            <h3>ERP Delivery</h3>
-            <p>35+ years running SAP & ERP programs with governance and adoption plans that reduce rework and downtime.</p>
-          </article>
-
-          <article class="card">
-            <h3>WMS & RFID</h3>
-            <p>Warehouse programmes and RFID rollouts that increased inventory accuracy and operational throughput.</p>
-          </article>
-
-          <article class="card">
-            <h3>Operational Impact</h3>
-            <p>Pilots that prove outcomes, governance that accelerates delivery, and metrics that connect IT to business KPIs.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-footer-cta">
-      <div class="container">
-        <p class="muted">Prefer email? <a href="mailto:iyervv24@gmail.com">iyervv24@gmail.com</a></p>
-      </div>
-    </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <small>Made with clarity · V. V. Iyer · © 2025</small>
     </div>
   </footer>
 
+  <!-- Small JS: nav toggle + active link handling -->
   <script>
-    // small nav toggle and active-link highlight
     (function(){
       const nav = document.querySelector('.site-nav');
       const toggle = document.getElementById('nav-toggle');
-      const links = document.querySelectorAll('.site-nav .nav-link');
-
-      toggle && toggle.addEventListener('click', ()=> {
+      toggle && toggle.addEventListener('click', () => {
         const open = nav.classList.toggle('open');
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
 
-      // mark active nav link for current page
+      // highlight active (defensive)
+      const links = document.querySelectorAll('.site-nav .nav-link');
       const path = location.pathname.split("/").pop() || 'index.html';
       links.forEach(a => {
-        const href = a.getAttribute('href');
-        if(href === path || (href === 'index.html' && path === '')) {
+        if (a.getAttribute('href') === path) {
           a.classList.add('active');
+        } else {
+          a.classList.remove('active');
         }
       });
-
-      // graceful image error fallback
-      const img = document.querySelector('.photo-wrap img');
-      if(img){
-        img.addEventListener('error', ()=> document.querySelector('.photo-wrap').classList.add('no-image'));
-      }
     })();
   </script>
 </body>
