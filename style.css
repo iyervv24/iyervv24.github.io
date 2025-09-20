@@ -1,31 +1,27 @@
-/* Hero Section */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 3rem 2rem;
-  background: #fafafa;
-  flex-wrap: wrap;
+/* ---- Circular profile photo style ---- */
+.photo-wrap {
+  width: 260px;
+  height: 260px;
+  margin: 0 auto;
+  border-radius: 50%;          /* makes it circular */
+  overflow: hidden;            /* ensures image fits the circle */
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  border: 3px solid rgba(255,255,255,0.08);
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.1));
 }
 
-.hero-content {
-  max-width: 600px;
+.photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
 }
 
-.hero-photo img {
-  max-width: 280px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-/* Mobile tweaks */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-photo img {
-    margin-top: 1.5rem;
-    max-width: 200px;
+/* smaller circle on mobile */
+@media (max-width: 480px) {
+  .photo-wrap {
+    width: 180px;
+    height: 180px;
   }
 }
