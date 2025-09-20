@@ -1,0 +1,136 @@
+/* -------------------------
+   ULTRA-MODERN THEME (core)
+   Drop this file as /style.css
+   ------------------------- */
+
+/* RESET */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --primary-gradient: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+  --accent-gradient: linear-gradient(135deg,#f093fb 0%,#f5576c 100%);
+  --dark-bg: linear-gradient(180deg,#0b0f18,#0f1720);
+  --glass-bg: rgba(255,255,255,0.03);
+  --glass-border: rgba(255,255,255,0.06);
+  --text-primary:#eaf0ff;
+  --text-secondary:rgba(234,240,255,0.75);
+  --muted: rgba(234,240,255,0.55);
+  --max-width: 1200px;
+}
+
+/* BASE */
+html,body{height:100%;}
+body{
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--dark-bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+
+/* CONTAINERS */
+.container{max-width:var(--max-width); margin:0 auto; padding:0 20px;}
+
+/* BACKGROUND ANIMATION (subtle) */
+.background-animation{
+  position:fixed; inset:0; z-index:-2;
+  background: linear-gradient(45deg,#07090d,#111217 60%, #0b0f18 100%);
+  background-size:400% 400%;
+  animation: gradientShift 18s ease-in-out infinite;
+}
+
+/* site header / nav */
+.site-header{
+  position:sticky; top:0; z-index:1000;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:20px; padding:18px 24px; backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(10,12,15,0.5), rgba(10,12,15,0.35));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{
+  width:48px;height:48px;border-radius:10px;
+  background: linear-gradient(135deg,#6fb1ff,#8b6cf0);
+  display:flex;align-items:center;justify-content:center;color:#071026;font-weight:800;
+  font-family:Inter, sans-serif;
+}
+.brand-text .name{font-weight:700;color:var(--text-primary)}
+.brand-text .muted{font-size:13px;color:var(--muted)}
+
+/* NAV */
+.site-nav{display:flex;align-items:center;gap:18px}
+.site-nav a{color:var(--text-secondary);text-decoration:none;padding:8px 12px;border-radius:8px}
+.site-nav a.active, .site-nav a:hover{color:var(--text-primary);transform:translateY(-2px)}
+.btn-cv{
+  background: #e2a300; color:#081219; padding:10px 16px; border-radius:10px; font-weight:700;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn{display:none;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text-primary);padding:8px 10px;border-radius:6px}
+
+/* HERO */
+.hero{min-height:85vh;display:grid;grid-template-columns:1fr 420px;align-items:center;gap:60px;padding:60px 20px}
+.hero-content{max-width:880px;padding-right:20px;text-align:left}
+.hero-badge{display:inline-block;padding:8px 18px;border-radius:40px;background:var(--glass-bg);border:1px solid var(--glass-border);color:var(--text-secondary);font-weight:700;margin-bottom:20px}
+.hero-title{
+  font-size: clamp(2.2rem, 6.8vw, 4.8rem);
+  font-weight:800;line-height:1.05;margin-bottom:18px;
+  background: linear-gradient(135deg,#aebcff 0%,#9da5ff 40%,#caa5ff 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+.hero-subtitle{color:var(--text-secondary);font-weight:300;margin-bottom:32px}
+
+/* CTA */
+.cta-group{display:flex;gap:14px;flex-wrap:wrap}
+.cta-primary{background:var(--primary-gradient);padding:14px 26px;border-radius:999px;color:#fff;text-decoration:none;font-weight:700}
+.cta-secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px 22px;color:var(--text-secondary);border-radius:999px;text-decoration:none}
+
+/* HERO RIGHT: professional showcase */
+.professional-showcase{max-width:400px;margin-left:auto; position:relative}
+.showcase-badge{position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:var(--accent-gradient);padding:6px 18px;border-radius:999px;color:#fff;font-weight:700;box-shadow:0 12px 30px rgba(240,83,120,0.14)}
+.hero-profile-image{
+  width:100%; max-width:320px; height:420px; border-radius:22px; object-fit:cover;
+  box-shadow:0 25px 45px rgba(0,0,0,0.45); border:4px solid rgba(255,255,255,0.03);
+  display:block;margin:60px auto 0;
+}
+
+/* ensure hero heading never clips on very large screens */
+.hero-title{padding-bottom:8px}
+@media (min-width:1600px){ .hero{padding-top:80px;padding-bottom:80px} .hero-title{line-height:1.08} }
+
+/* INSIGHTS / GRID & CARDS (brief) */
+.insights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:16px}
+.insight-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+
+/* CONTACT PROFILE thumb round */
+.profile-image-enhanced{
+  width:160px;height:160px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 18px;border:6px solid rgba(255,255,255,0.06);
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* FORM styles */
+.form-container{padding:28px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+.form-container input, .form-container textarea, .form-container select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.05);background:transparent;color:var(--text-primary);margin-bottom:14px}
+
+/* FOOTER */
+.footer{padding:40px 20px;color:var(--muted);text-align:center}
+
+/* RESPONSIVE */
+@media (max-width:1000px){
+  .hero{grid-template-columns:1fr;gap:36px;padding:40px 18px}
+  .professional-showcase{order:-1;margin:0 auto}
+  .site-nav{display:none}
+  .mobile-menu-btn{display:block}
+  .hero-profile-image{height:320px}
+  .hero-title{text-align:center}
+  .hero-subtitle{text-align:center}
+}
+
+@media (max-width:480px){
+  .profile-image-enhanced{width:110px;height:110px}
+  .hero-title{font-size: clamp(1.8rem,8vw,2.6rem)}
+}
+
+/* small utility */
+.glass-container{backdrop-filter: blur(6px); border-radius:14px; border:1px solid rgba(255,255,255,0.03)}
