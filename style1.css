@@ -1,108 +1,95 @@
-/* ---------- ULTRA MODERN: floating pill nav + hero ---------- */
-
-/* header container */
-.site-header{
-  position: sticky;
-  top: 22px;                 /* lifted slightly off top for floating look */
-  z-index: 120;
-  background: transparent;
-  pointer-events: auto;
-  padding: 0;
+/* -------------------- Basic tokens -------------------- */
+:root{
+  --bg:#071428;
+  --panel: rgba(255,255,255,0.03);
+  --muted: rgba(255,255,255,0.72);
+  --accent-1: #5b21b6;
+  --accent-2: linear-gradient(90deg,#60a5fa,#7c3aed);
+  --white: #fff;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-/* inner header wrapper to center content */
-.site-header .container{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-  padding: 10px 20px;
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background: linear-gradient(180deg,#071428 0%, #071826 60%);
+  color:var(--white);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
 }
+
+/* container */
+.container{max-width:1150px;margin:0 auto;padding:0 20px}
+
+/* header */
+.site-header{position:sticky;top:22px;z-index:120}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(180deg,#7dd3fc,#8b5cf6);display:flex;align-items:center;justify-content:center;color:#032; font-weight:800}
+.brand-text .brand-name{font-weight:700;color:#fff}
+.brand-sub{color:var(--muted);font-size:0.95rem}
 
 /* floating pill nav */
-.site-nav{
-  display:flex;
-  gap:18px;
-  align-items:center;
-  position: relative;
-}
-
-/* rounded pill background behind nav (floating) */
+.site-nav{position:relative;display:flex;gap:14px;align-items:center}
 .site-nav::before{
-  content:"";
-  position:absolute;
-  inset: -8px -12px;
-  left: auto;
-  right: auto;
-  margin: 0 auto;
-  width: calc(100% + 30px);
-  height: 56px;
-  border-radius: 28px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-  box-shadow: 0 18px 40px rgba(2,6,23,0.7);
-  z-index: -1;
-  backdrop-filter: blur(8px);
+  content:""; position:absolute; inset:-8px -18px; border-radius:28px; z-index:-1;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow:0 18px 40px rgba(2,6,23,0.6); backdrop-filter:blur(6px);
 }
+.nav-link{color:rgba(255,255,255,0.86);text-decoration:none;padding:10px 16px;border-radius:14px;font-weight:600}
+.nav-link.active,.nav-link:hover{color:#fff}
+.btn-cv{background:#eab308;padding:10px 14px;border-radius:10px;color:#08111a;text-decoration:none;font-weight:700}
+.nav-toggle{display:none}
 
-/* nav links style */
-.site-nav .nav-link{
-  color: rgba(255,255,255,0.85);
-  font-weight:600;
-  padding: 10px 16px;
-  border-radius: 18px;
-}
-.site-nav .nav-link.active,
-.site-nav .nav-link:hover{
-  color: #fff;
-}
-
-/* hide default toggle when desktop */
-.nav-toggle{ display:none !important; }
-
-/* HERO — big modern type + roomy layout */
-.hero{
-  padding: clamp(48px, 8vh, 120px) 0;
-  overflow: visible;
-}
-.hero-inner{
-  display:grid;
-  grid-template-columns: 1fr 420px;
-  gap:48px;
-  align-items:center;
-  min-height:72vh;
-  padding: 0 20px;
-}
-
-/* huge headline — restore ultra-modern scale */
+/* hero */
+.hero{padding:64px 0}
+.hero-inner{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:center;min-height:64vh}
 .hero-title{
-  font-size: clamp(2.8rem, 6.6vw, 5.2rem);    /* big on desktop */
-  font-weight: 900;
-  line-height: 1.02;
-  margin:0 0 12px 0;
-  background: linear-gradient(90deg,#dbeafe,#a78bfa 60%,#7dd3fc);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  padding-bottom:8px;                         /* avoid descender clipping */
-  word-break:break-word;
+  font-size: clamp(2.6rem, 6.6vw, 5.2rem);
+  font-weight:900;line-height:1.02;margin-bottom:12px;
+  background: linear-gradient(90deg,#c7d2fe,#c084fc 55%, #60a5fa 90%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;padding-bottom:10px;
 }
+.hero-sub{color:var(--muted);font-size:1.05rem;max-width:720px}
 
-/* subtle overlay card behind hero text (like varsha.de) */
-.hero-left{
-  position: relative;
-}
-.hero-left::after{
-  content:"";
-  position:absolute;
-  left:-24px;
-  top:-24px;
-  right:-24px;
-  bottom:-24px;
-  border-radius:18px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
-  box-shadow: 0 18px 40px rgba(2,6,23,0.45);
-  z-index:-1;
-  pointer-events:none;
-}
+/* hero image block */
+.photo-wrap{width:420px;height:340px;border-radius:14px;background-size:cover;background-position:center;box-shadow:0 40px 80px rgba(2,6,23,0.6);}
 
-/* keep hero sub readable */
-.hero-sub{ color: rgba(255,255,255,0.85); font-size:1.05rem; max-width:760px; margin-bottom:18px; }
+/* brief section */
+.brief{padding:48px 0}
+.two-col{display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:start}
+.card{background:var(--panel);padding:22px;border-radius:14px;box-shadow:0 20px 40px rgba(2,6,23,0.45)}
+
+/* contact grid fallback */
+.contact-grid{display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start}
+
+/* small utilities */
+.muted{color:var(--muted)}
+.cta-btn{display:inline-block;padding:12px 22px;border-radius:12px;background:linear-gradient(90deg,#60a5fa,#7c3aed);color:#fff;text-decoration:none;font-weight:700}
+.btn-ghost{display:inline-block;padding:10px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);color:var(--white);text-decoration:none}
+
+/* footer */
+.site-footer{padding:48px 0;text-align:center;color:rgba(255,255,255,0.6)}
+
+/* contact thumbnail styles (clean) */
+.contact-info .contact-photo{width:120px;height:120px;border-radius:50%;overflow:hidden;margin:0 auto 18px auto;box-shadow:0 10px 28px rgba(2,6,23,0.45);border:2px solid rgba(255,255,255,0.06)}
+.contact-info .contact-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* responsive */
+@media (max-width:1000px){
+  .hero-inner{grid-template-columns:1fr 320px}
+  .photo-wrap{width:320px;height:260px}
+}
+@media (max-width:750px){
+  .header-inner{gap:12px}
+  .site-nav::before{display:none}
+  .nav-toggle{display:inline-block}
+  .site-nav .nav-link{display:none}
+  .site-nav.open .nav-link{display:inline-block}
+  .hero-inner{grid-template-columns:1fr; text-align:center}
+  .photo-wrap{display:none}
+  .two-col{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
